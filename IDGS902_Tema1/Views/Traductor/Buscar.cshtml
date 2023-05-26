@@ -1,0 +1,54 @@
+﻿@model IDGS902_Tema1.Models.DiccionarioBusqueda
+
+@{
+    ViewBag.Title = "Buscar";
+}
+
+<h2>Buscar</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Palabra, "Escribe una palabra y selecciona su idioma", htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Palabra, new { htmlAttribute = new { @class = "form-control" } })
+            </div>
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Idioma, "Inglés", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.RadioButtonFor(model => model.Idioma, "Ingles", new { id = "Ingles" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Idioma, "Español", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.RadioButtonFor(model => model.Idioma, "Espanol", new { id = "Espanol" })
+        </div>
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <input type="submit" name="Registrar" class="btn btn-outline-primary my-3" value="Buscar" />
+
+
+            </div>
+
+
+        </div>
+        <div class="align-content-xl-end">
+            @if (!string.IsNullOrEmpty(ViewBag.PalabraEncontrada))
+            {
+
+                <h3>Su traducción es:</h3>
+                <h6><b>@ViewBag.PalabraEncontrada</b></h6>
+
+            }
+
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

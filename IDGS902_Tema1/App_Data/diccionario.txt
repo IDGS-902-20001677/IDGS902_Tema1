@@ -1,0 +1,5 @@
+uno,one
+lobo,wolf
+perro,dog
+rojo,red
+reptil,reptile

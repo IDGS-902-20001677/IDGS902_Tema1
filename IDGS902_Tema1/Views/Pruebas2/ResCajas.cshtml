@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Resultados";
+}
+
+<h1>Resultados</h1>
+<h1>Suma total: @ViewBag.suma</h1>
+@if (ViewBag.numeros != null)
+{
+    <h1>Repetidos:</h1>
+    <ul>
+        @foreach (var numero in ViewBag.numeros)
+        {
+            <li>@numero</li>
+        }
+    </ul>
+}
+
